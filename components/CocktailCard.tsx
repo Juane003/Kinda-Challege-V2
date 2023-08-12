@@ -37,14 +37,24 @@ export const CocktailCard = async ({ cocktail }: CocktailCardProps) => {
           <div className="flex">
             <p className="flex flex-col truncate">
               {ingredients.splice(0, 3).map((ingredientKey) => (
-                <span className="block truncate border-b border-b-gray-200 pr-4">
+                <span
+                  key={`${ingredientKey}${
+                    drinks[0][ingredientKey as KeyOfCocktailDetails]
+                  }`}
+                  className="block truncate border-b border-b-gray-200 pr-4"
+                >
                   {drinks[0][ingredientKey as KeyOfCocktailDetails]}
                 </span>
               ))}
             </p>
             <p className="flex flex-col truncate">
               {measures.splice(0, 3).map((measureKey) => (
-                <span className="block truncate border-b pl-4 border-b-gray-200">
+                <span
+                  key={`${measureKey}${
+                    drinks[0][measureKey as KeyOfCocktailDetails]
+                  }`}
+                  className="block truncate border-b pl-4 border-b-gray-200"
+                >
                   {drinks[0][measureKey as KeyOfCocktailDetails]}
                 </span>
               ))}

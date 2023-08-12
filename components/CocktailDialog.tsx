@@ -25,14 +25,24 @@ export const CocktailDialog = ({ cocktail }: CocktailDialogProps) => {
             <div className="flex">
               <p className="flex flex-col">
                 {ingredients.map((ingredientKey) => (
-                  <span className="border-b  whitespace-nowrap overflow-hidden text-ellipsis border-b-gray-200 pr-8">
+                  <span
+                    key={`${ingredientKey}${
+                      cocktail[ingredientKey as KeyOfCocktailDetails]
+                    }`}
+                    className="border-b  whitespace-nowrap overflow-hidden text-ellipsis border-b-gray-200 pr-8"
+                  >
                     {cocktail[ingredientKey as KeyOfCocktailDetails]}
                   </span>
                 ))}
               </p>
               <p className="flex flex-col">
                 {measures.map((measuresKey) => (
-                  <span className="border-b max-w-20 whitespace-nowrap overflow-hidden text-ellipsis border-b-gray-200 pr-8">
+                  <span
+                    key={`${measuresKey}${
+                      cocktail[measuresKey as KeyOfCocktailDetails]
+                    }`}
+                    className="border-b max-w-20 whitespace-nowrap overflow-hidden text-ellipsis border-b-gray-200 pr-8"
+                  >
                     {cocktail[measuresKey as KeyOfCocktailDetails]}
                   </span>
                 ))}

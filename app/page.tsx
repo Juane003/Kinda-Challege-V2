@@ -11,7 +11,7 @@ export default async function Home() {
   const cocktailList = await getCocktailList();
 
   const renderCocktails = (cocktail: Cocktail) => {
-    return <CocktailCard cocktail={cocktail} />;
+    return <CocktailCard key={cocktail.idDrink} cocktail={cocktail} />;
   };
   return (
     <>
